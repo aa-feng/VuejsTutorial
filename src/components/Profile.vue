@@ -33,6 +33,7 @@ export default {
 <style scoped>
 .profile_header {
   padding: 10px;
+  background-size: 100%;
 }
 .profile_avatar {
   height: 30px;
