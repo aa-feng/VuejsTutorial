@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+  router, // default router
+  components: { App }, // the main component
+  template: '<App/>' // This will load the template defined in App.vue
 })
