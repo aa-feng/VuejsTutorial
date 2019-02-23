@@ -23,11 +23,6 @@ export default new Router({
       path: '/activities', // match path '/activities' to Activities component
       name: 'Activities',
       component: Activities
-    },
-    {
-      path: '/*', // For all other paths, just display the default component, e.g. 'Posts'
-      name: 'Posts',
-      component: Posts
     }
   ]
 })

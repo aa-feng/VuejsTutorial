@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Posts</router-link>
-      <router-link to="/comments">Comments</router-link>
-      <router-link to="/activities">Activities</router-link>
-    </nav>
-
+    <Profile></Profile>
+    <b-nav tabs>
+      <b-nav-item active><router-link to="/">Posts</router-link></b-nav-item>
+      <b-nav-item><router-link to="/comments">Comments</router-link></b-nav-item>
+      <b-nav-item><router-link to="/activities">Activities</router-link></b-nav-item>
+    </b-nav>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Profile from './components/Profile'
+
 export default {
-  name: 'App' // The main component's name
+  name: 'App', // The main component's name
+  components: {
+    Profile // Profile component is used in this component
+  }
 }
 </script>
 
