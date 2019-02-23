@@ -13,7 +13,7 @@ import User from './mixins/user'
 
 export default {
   name: 'Profile',
-  mixins: [User]
+  mixins: [User] // use user mixin
 }
 </script>
 

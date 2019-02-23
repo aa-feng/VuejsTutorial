@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import User from './mixins/user'
-import Post from './mixins/post'
+import User from './mixins/user' // use user mixin in Posts component
+import Post from './mixins/post' // use post mixin in Posts component
 let steem = require('steem')
 
 export default {
@@ -38,10 +38,12 @@ export default {
   mixins: [User, Post],
   created () {
     let postComponent = this // Store current component (Post) to postComponent
+    // cal steem api to retrieve user's posts
     steem.api.getDiscussionsByAuthorBeforeDate(this.username, null, new Date().toISOString().split('.')[0], 10, function (err, result) {
       if (err) {
         console.log(err.stack)
       }
+      // save user's posts information to 'posts' attribute
       postComponent.posts = result
     })
   }

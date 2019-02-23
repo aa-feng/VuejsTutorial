@@ -9,8 +9,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
-Vue.prototype.$default_username = 'aafeng'
-
 /* eslint-disable no-new */
 
 new Vue({
