@@ -10,17 +10,17 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/', // match path '/' to Posts component
+      path: '/:username/', // match path '/' to Posts component
       name: 'Posts',
       component: Posts
     },
     {
-      path: '/comments', // match path '/comments' to Comments component
+      path: '/:username/comments/', // match path '/comments' to Comments component
       name: 'Comments',
       component: Comments
     },
     {
-      path: '/activities', // match path '/activities' to Activities component
+      path: '/:username/activities/', // match path '/activities' to Activities component
       name: 'Activities',
       component: Activities
     }

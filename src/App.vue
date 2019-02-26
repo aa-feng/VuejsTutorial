@@ -2,9 +2,9 @@
   <div id="app">
     <Profile></Profile>
     <b-nav tabs>
-      <b-nav-item active><router-link to="/">Posts</router-link></b-nav-item>
-      <b-nav-item><router-link to="/comments">Comments</router-link></b-nav-item>
-      <b-nav-item><router-link to="/activities">Activities</router-link></b-nav-item>
+      <b-nav-item active><router-link :to="'/@'+username">Posts</router-link></b-nav-item>
+      <b-nav-item><router-link :to="'/@'+username+'/comments'">Comments</router-link></b-nav-item>
+      <b-nav-item><router-link :to="'/@'+username+'/activities'">Activities</router-link></b-nav-item>
     </b-nav>
     <router-view/>
   </div>
@@ -12,9 +12,11 @@
 
 <script>
 import Profile from './components/Profile'
+import User from './components/mixins/user' // use user mixin in Posts component
 
 export default {
   name: 'App', // The main component's name
+  mixins: [User],
   components: {
     Profile // Profile component is used in this component
   }
