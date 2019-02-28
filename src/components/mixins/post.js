@@ -11,7 +11,7 @@ export default {
       }
     },
     firstImage (post) { // return first image URL from page content
-      const regex = /(https?:\/\/.*\.(?:png|jpg|gif))/g // only check jpg/png/gif for now
+      const regex = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif|PNG|JPG|JPEG|GIF))/g // only check jpg/png/gif for now
       let img = regex.exec(post.body)
       if (img instanceof Array) {
         return img[0] // return first image
