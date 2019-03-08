@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Posts from '@/components/Posts'
 import Comments from '@/components/Comments'
 import Activities from '@/components/Activities'
+import Settings from '@/components/Settings'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/:username/activities/', // match path '/activities' to Activities component
       name: 'Activities',
       component: Activities
+    },
+    {
+      path: '/:username/settings/', // match path '/activities' to Activities component
+      name: 'Settings',
+      component: Settings
     }
   ]
 })

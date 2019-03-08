@@ -3,18 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import User from './components/mixins/user'
+// import User from './components/mixins/user'
+import store from './store'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
-Vue.mixin(User)
+// Vue.mixin(User)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 
 new Vue({
   el: '#app',
+  store, // declare the 'store' will be used for state management
   router, // default router
   components: { App }, // the main component
   template: '<App/>' // This will load the template defined in App.vue

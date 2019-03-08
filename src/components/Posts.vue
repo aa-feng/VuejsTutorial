@@ -41,7 +41,7 @@ export default {
     let postComponent = this // Store current component (Post) to postComponent
 
     // cal steem api to retrieve user's posts
-    steem.api.getDiscussionsByAuthorBeforeDate(this.username, null, new Date().toISOString().split('.')[0], 10, function (err, result) {
+    steem.api.getDiscussionsByAuthorBeforeDate(this.username, null, new Date().toISOString().split('.')[0], this.$store.getters.default_number_of_posts, function (err, result) {
       if (err) {
         console.log(err.stack)
       }
