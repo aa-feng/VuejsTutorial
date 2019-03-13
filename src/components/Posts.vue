@@ -1,6 +1,8 @@
 <template>
   <div class="post_container">
-
+    <div class="row post_new">
+      <button v-on:click="newPost">New post</button>
+    </div>
     <div class="row post" v-for="post in posts" :key="post.post_id">
       <div class="row post_header">
         <div class="col-sm-12">
@@ -63,6 +65,10 @@ export default {
           })
         }
       }
+    },
+    newPost () {
+      // Update Vue.js route
+      this.$router.push({ path: '/@' + this.username + '/new_post' })
     }
   },
   mounted () {
@@ -92,5 +98,9 @@ export default {
   .post_thumbnail {
     width: 120px;
     height: 80px;
+  }
+  .post_new {
+    padding-left: 50px;
+    padding-top: 20px;
   }
 </style>
