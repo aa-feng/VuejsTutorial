@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/', // match path '/' to Comments component
       name: 'Root',
-      component: Settings
+      component: Posts
     },
     {
       path: '/:username/', // match path '/' to Posts component
