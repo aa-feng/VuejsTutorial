@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "11"
+cache: 
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+after_success:
+  - cd ./dist
+  - git init
+  - git config --global user.name "${U_NAME}"
+  - git config --global user.email "${U_EMAIL}"
+  - git add --all
+  - git commit -m "automatically update from travis-ci"
+  - git push --quiet --force "https://${GH_TOKEN}@{GH_REF}" master:${P_BRANCH}
+
+branches:
+  only:
+    - master
